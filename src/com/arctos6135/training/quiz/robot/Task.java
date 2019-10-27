@@ -8,6 +8,8 @@ public interface Task {
 
     /**
      * Does the task.
+     * 
+     * @param robot The robot that is doing the task
      */
-    public void doIt();
+    public void doIt(Robot robot);
 }

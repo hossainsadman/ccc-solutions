@@ -71,7 +71,7 @@ public abstract class Robot {
      */
     public void doTask(Task task) {
         try {
-            task.doIt();
+            task.doIt(this);
             System.out.println("Task successfully done!");
         } catch (TaskExecutionException e) {
             System.err.println("Oh no, task execution failed!");
