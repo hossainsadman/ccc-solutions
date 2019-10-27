@@ -20,11 +20,18 @@ public class Gyroscope extends Sensor {
     }
 
     /**
-     * Gets the heading (direction) of the robot, <strong>in degrees</strong>.
+     * Gets the continuous heading (direction) of the robot, <strong>in
+     * degrees</strong>.
      * 
-     * @return The heading of the robot <strong>in degrees</strong>
+     * <p>
+     * Note that this is a continuous angle. I.e. turning past 360 degrees will not
+     * result in the angle returned wrapping back to 0 degrees, but will yield an
+     * angle greater than 360 instead. The same goes for angles less than 0 degrees.
+     * </p>
+     * 
+     * @return The continuous heading of the robot <strong>in degrees</strong>
      */
     public double getHeading() {
-        return Math.random() * Math.PI * 2 - Math.PI;
+        return Math.random() * 100000 - 50000;
     }
 }

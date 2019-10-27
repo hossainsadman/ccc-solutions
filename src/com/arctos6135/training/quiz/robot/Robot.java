@@ -24,10 +24,10 @@ public abstract class Robot {
 
     /**
      * This method should return the current heading (direction) of the robot,
-     * <strong>in radians</strong>.
+     * <strong>in degrees in the range of [0, 360]</strong>.
      * 
-     * @return The current heading (direction) of the robot <strong>in
-     *         radians</strong>
+     * @return The current heading (direction) of the robot <strong>in degrees in
+     *         the range of [0, 360]</strong>
      */
     public abstract double getHeading();
 
