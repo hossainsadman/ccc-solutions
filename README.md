@@ -12,6 +12,8 @@ Note that because you have not yet learned how to use jar libraries, you should 
 You will need to demonstrate your knowledge of Java concepts and the ability to make use of API classes with the help of documentation to complete this quiz.
 Of course, just like real life, it will be open-book; you can use any resource you want. 
 
+**Note: Since the provided classes are part of the "API", you should assume that they *cannot* be changed. In real life, they will be sealed away in a Jar file and be read-only.**
+
 Your mission, should you choose to accept it, is to:
 ### 1. Implement the `com.arctos6135.training.quiz.robot.Robot` class.
 
