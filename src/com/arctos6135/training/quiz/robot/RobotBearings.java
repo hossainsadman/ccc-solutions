@@ -49,4 +49,18 @@ public class RobotBearings extends Robot {
 	public double getHeading() {
 		return Math.abs(gyro.getHeading() % 360);
 	}
+
+	Task task = (Robot robot) -> {
+		try {
+			if (this.state == State.ENABLED) {
+				motorL.setSpeed(200);
+				motorR.setSpeed(200);
+			}
+			else if (this.state == State.DISABLED) {
+			}
+		} catch (TaskExecutionException e) {
+			System.err.println("Robot state is unknown. Please set state to be ENABLED or DISABLED in order to do task.");
+		}
+	};
+
 }
