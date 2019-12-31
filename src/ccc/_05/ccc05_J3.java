@@ -9,6 +9,10 @@ public class ccc05_J3 {
 		Scanner in = new Scanner(System.in);
 		ArrayList<String> directions = new ArrayList<>();
 		ArrayList<String> locations = new ArrayList<>();
+
+		ArrayList<String> reverseDirections = new ArrayList<>();
+		//	ArrayList<String> reverseLocations = new ArrayList<>();
+
 		while (true) {
 			String direction = in.nextLine();
 			directions.add(direction);
@@ -20,19 +24,27 @@ public class ccc05_J3 {
 				locations.add(location);
 			}
 		}
-		
+
 		System.out.println(directions.toString());
 		System.out.println(locations.toString());
 
+		Collections.reverse(locations);
+		locations.add("HOME");
+
 		for (String elem: directions) {
 			if (elem.equals("R")) {
-				elem.replace("R", "LEFT");
+				reverseDirections.add("LEFT");
 			}
 			else if (elem.equals("L")) {
-				elem.replace("L", "RIGHT");
+				reverseDirections.add("RIGHT");
 			}
 		}
 
-		System.out.println(directions.toString());
+		System.out.println(reverseDirections.toString());
+		System.out.println(locations.toString());
+
+		for (String direction: reverseDirections) {
+			System.out.println("Turn " + direction);
+		}
 	}
 }
