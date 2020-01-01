@@ -15,6 +15,7 @@ public class ccc06_J3 {
 			}
 			words.add(word);
 		}
+		System.out.println((int)'a');
 
 	}
 
@@ -22,8 +23,8 @@ public class ccc06_J3 {
 		int time = 0;
 		String[] letters = new String[word.length()];
 		for (String letter: letters) {
-			for (int i = 65; i <= 90; i++) {
-			}
+			int pressNum = 0;
+			// if (letter.contains("a") || letter.contains("d") ||)
 		}
 		
 		return 0;
