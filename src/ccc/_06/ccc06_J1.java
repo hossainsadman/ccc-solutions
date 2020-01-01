@@ -1,6 +1,6 @@
 package ccc._06;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class ccc06_J1 {
 	public static void main(String[] args) {
