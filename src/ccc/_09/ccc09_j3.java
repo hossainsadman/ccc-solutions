@@ -2,10 +2,10 @@ package ccc._09;
 
 import java.util.*;
 
-public class ccc09J3 {
+public class ccc09_j3 {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		timeDiff(current, difference)
+		System.out.println(timeDiff(5, 985));
 		int ottawa = in.nextInt();
 	}
 
@@ -25,9 +25,5 @@ public class ccc09J3 {
 		} else {
 			return current - difference;
 		}
-	}
-
-	public static int timeSubtract(int a, int b) {
-		if (a - b < 0)
 	}
 }
