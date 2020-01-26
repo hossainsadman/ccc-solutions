@@ -10,7 +10,7 @@ public class ccc10j4 {
 		HashMap<Integer, ArrayList<Integer>> rawNums = new HashMap<>();
 		while (true) {
 			rawStrings.add(in.nextLine());
-			if (rawStrings.get(rawStrings.size()).equals("0")) {
+			if (rawStrings.get(rawStrings.size() - 1).equals("0")) {
 				break;
 			}
 		}
@@ -28,7 +28,7 @@ public class ccc10j4 {
 		}
 
 		for (int i = 0; i < rawNums.size(); i++) {
-			rawNums.get(i);
+			rawNums.get(i);5
 		}
 	}
 }
