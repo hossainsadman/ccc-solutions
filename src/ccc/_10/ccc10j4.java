@@ -28,7 +28,7 @@ public class ccc10j4 {
 		}
 
 		for (int i = 0; i < rawNums.size(); i++) {
-			rawNums.get(i);5
+			rawNums.get(i);
 		}
 	}
 }
