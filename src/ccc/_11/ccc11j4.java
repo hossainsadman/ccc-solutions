@@ -2,7 +2,7 @@ package ccc._11;
 
 import java.util.*;
 
-//	INCOMPLETE
+//	COMPLETE
 
 public class ccc11j4 {
 
@@ -10,6 +10,7 @@ public class ccc11j4 {
 	public static boolean safe = true;
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
+		LinkedList<String> output = new LinkedList<>();
 		holes.add(new Node(0, -1));
 		drill("d", 2);
 		drill("r", 3);
@@ -23,14 +24,21 @@ public class ccc11j4 {
 
 		while (safe) {
 			String input = in.nextLine();
+			if (input.contains("q")) {
+				break;
+			}
 			String length = input.substring(2, input.length());
 			drill(Character.toString(input.charAt(0)), Integer.parseInt(length));
 			if (safe) {
-				System.out.println(holes.getLast().getx() + " " + holes.getLast().gety() + " safe");
-			} else {
-				System.out.println(holes.getLast().getx() + " " + holes.getLast().gety() + " DANGER");
+				output.add(holes.getLast().getx() + " " + holes.getLast().gety() + " safe");
+			} else if (!safe) {
+				output.add(holes.getLast().getx() + " " + holes.getLast().gety() + " DANGER");
 				break;
 			}
+		}
+
+		for (String text: output) {
+			System.out.println(text);
 		}
 	}
 
@@ -43,37 +51,41 @@ public class ccc11j4 {
 			for (int i = 1; i <= length; i++) {
 				x = x - 1;
 				tmp = new Node(x, y);
-				if (holes.contains(tmp)) {
-					safe = false;
-				}
+				equals(tmp);
 				holes.add(tmp);
 			}
 		} else if (direction.equals("r")) {
 			for (int i = 1; i <= length; i++) {
 				x = x + 1;
 				tmp = new Node(x, y);
-				if (holes.contains(tmp)) {
-					safe = false;
-				}
+				equals(tmp);
 				holes.add(tmp);
 			}
 		} else if (direction.equals("u")) {
 			for (int i = 1; i <= length; i++) {
 				y = y + 1;
 				tmp = new Node(x, y);
-				if (holes.contains(tmp)) {
-					safe = false;
-				}
+				equals(tmp);
 				holes.add(tmp);
 			}
 		} else if (direction.equals("d")) {
 			for (int i = 1; i <= length; i++) {
 				y = y - 1;
 				tmp = new Node(x, y);
-				if (holes.contains(tmp)) {
-					safe = false;
-				}
+				equals(tmp);
 				holes.add(tmp);
+			}
+		}
+	}
+
+	public static void equals(Node node) {
+		int x = node.x;
+		int y = node.y;
+		for (Node a: holes) {
+			int x2 = a.x;
+			int y2 = a.y;
+			if (x == x2 && y == y2) {
+				safe = false;
 			}
 		}
 	}
