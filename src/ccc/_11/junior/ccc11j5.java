@@ -1,4 +1,4 @@
-package ccc._11;
+package ccc._11.junior;
 
 import java.util.*;
 
