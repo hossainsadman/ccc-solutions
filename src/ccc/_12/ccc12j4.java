@@ -2,6 +2,8 @@ package ccc._12;
 
 import java.util.*;
 
+//	COMPLETE
+
 public class ccc12j4 {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
