@@ -10,7 +10,7 @@ public class ccc12j4 {
 		LinkedList<String> output = new LinkedList<>();
 		int k = in.nextInt();
 		in.nextLine();
-		String input = in.nextLine();
+        String input = in.nextLine();
 		for (int i = 0; i < input.length(); i++) {
 			int s = 3 * (i + 1) + k;
 			int ascii = (int)(input.charAt(i)) - s;
@@ -21,6 +21,7 @@ public class ccc12j4 {
 			String shiftedLetter = Character.toString(letter);
 			output.add(shiftedLetter);
 		}
+		
 		for (String letter: output) {
 			System.out.print(letter);
 		}
