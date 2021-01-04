@@ -55,4 +55,8 @@ class Graph {
             addEdgeHelper(dest, src);
         }
     }
+
+    boolean hasEdge(int src, int dest) {
+        return adj_list.containsKey(src) && adj_list.get(src) != null && adj_list.get(src).contains(dest);
+    }
 }
