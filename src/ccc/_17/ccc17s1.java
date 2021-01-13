@@ -1,11 +1,11 @@
-package ccc._18;
+package ccc._17;
 
 import java.util.*;
 import java.io.*;
 
 // COMPLETE
 
-public class ccc18s1 {
+public class ccc17s1 {
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
 
