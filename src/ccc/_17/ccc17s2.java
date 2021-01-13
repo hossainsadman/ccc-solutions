@@ -24,11 +24,10 @@ public class ccc17s2 {
         Arrays.sort(lvls);
         int mid = lvls.length/2;
 
-        if (mid % 2 != 0) {
-            int n = lvls.length/2;
-            System.out.print(lvls[n]+" ");
-            for (int i = 0; i <= lvls.length; i++) {
-                System.out.print(lvls[n-1]+" "+lvls[n+1]+" ");
+        if (lvls.length % 2 != 0) {
+            System.out.print(lvls[mid]+" ");
+            for (int i = 1; i <= mid; i++) {
+                System.out.print(lvls[mid-i]+" "+lvls[mid+i]+" ");
             }
         } else {
             int up = lvls.length/2, down = lvls.length/2;
@@ -38,6 +37,5 @@ public class ccc17s2 {
                 down-=1;
             }
         }
-        
     }
 }
