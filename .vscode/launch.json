@@ -2,6 +2,13 @@
 	"configurations": [
         {
             "type": "java",
+            "name": "Launch ccc18j5ii",
+            "request": "launch",
+            "mainClass": "ccc._18.ccc18j5ii",
+            "projectName": "CCC Solutions"
+        },
+        {
+            "type": "java",
             "name": "Launch ccc16s3",
             "request": "launch",
             "mainClass": "ccc._16.ccc16s3",
