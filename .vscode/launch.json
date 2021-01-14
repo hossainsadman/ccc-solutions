@@ -2,6 +2,20 @@
 	"configurations": [
         {
             "type": "java",
+            "name": "Launch ccc16s3",
+            "request": "launch",
+            "mainClass": "ccc._16.ccc16s3",
+            "projectName": "CCC Solutions"
+        },
+        {
+            "type": "java",
+            "name": "Launch ccc16s2",
+            "request": "launch",
+            "mainClass": "ccc._16.ccc16s2",
+            "projectName": "CCC Solutions"
+        },
+        {
+            "type": "java",
             "name": "Launch ccc17s2",
             "request": "launch",
             "mainClass": "ccc._17.ccc17s2",
