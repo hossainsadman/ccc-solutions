@@ -54,7 +54,11 @@ class Graph {
         if (adjlist.get(src) == null) {
             adjlist.put(src, new HashSet<>());
         }
+        if (adjlist.get(dest) == null) {
+            adjlist.put(dest, new HashSet<>());
+        }
         adjlist.get(src).add(dest);
+        adjlist.get(dest).add(src);
     }
 
     HashSet<Integer> adjNodes (int src) {
