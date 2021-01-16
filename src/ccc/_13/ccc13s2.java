@@ -3,19 +3,19 @@ package ccc._13;
 import java.util.*;
 import java.io.*;
 
-public class ccc13s1 {
+public class ccc13s2 {
     public static void main(String[] args) throws IOException {
         BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
         
         int max = Integer.parseInt(r.readLine());
         int n = Integer.parseInt(r.readLine());
         // int[] cars = new int[n];
-        LinkedList cars = new LinkedList<Integer>();
+        LinkedList<Integer> cars = new LinkedList<Integer>();
         for (int i = 0; i < n; i++) {
             cars.add(Integer.parseInt(r.readLine()));
         }
 
-        int sum = 0, last = 0;
+        int sum = 0, i = 0;
         {
         // if (n == 1) {
         //     if (cars[0] > max) {
@@ -52,13 +52,26 @@ public class ccc13s1 {
         // }
         }
 
-        for (int i = 0; i < n; i++) {
-            sum = (int)cars.removeFirst()+(int)cars.removeFirst()+(int)cars.removeFirst()+(int)cars.removeFirst();
+        LinkedList<Integer> current = new LinkedList<Integer>();
+        for (i = 0; i < n; i++) {
+            if (cars.size() == 0) {
+                break;
+            }
+
+            current.add(cars.removeFirst());
+            if (current.size()>4) {
+                current.removeFirst();
+            }
+
+            sum = 0;
+            for (int cur : current) {
+                sum+= cur;
+            }
+
             if (sum > max) {
                 break;
             }
-            last = i+3+1;
         }
-        System.out.println(last);
+        System.out.println(i);
     }
 }
