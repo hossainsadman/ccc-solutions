@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Python38\\python.exe"
+    "python.pythonPath": "C:\\Users\\MSadm\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "java.refactor.renameFromFileExplorer": "autoApply"
 }
