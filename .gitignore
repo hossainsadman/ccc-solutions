@@ -1,7 +1,9 @@
 .vscode/
+.settings/
 .bin/
 __pycache__/
 *.log
 *.class
-*.classpath
 *.pyc
+.classpath
+.project
