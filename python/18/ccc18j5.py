@@ -1,51 +1,36 @@
-from math import inf
-from collections import deque
-
-class graph():
-    adjlist = dict()
-    dist = dict()
-    # endPages = set()
-    shortest = inf
-
-    def __init__(self, pages) -> None:
-        self.pages = pages
-
-    def addEdge(self, src, dest):
-        if src not in self.adjlist:
-            self.adjlist[src] = list()
-        self.adjlist[src].append(dest)
-    
-    def dijkstra(self, src):
-        visited = set()
-        self.dist = {}
-        for i in range(1, self.pages+1):
-            self.dist[i] = inf
-        self.dist[src] = 1
-        q = deque()
-        q.appendleft(src)
-        while len(q)>0:
-            cur = q.popleft()
-            visited.add(cur)
-            if cur not in self.adjlist.keys():
-                if g.dist[cur] < self.shortest:
-                    self.shortest = g.dist[cur]
-                continue
-            for adjNode in self.adjlist[cur]:
-                self.dist[adjNode] = min(self.dist[adjNode], self.dist[cur]+1)
-                if adjNode not in visited:
-                    q.appendleft(adjNode)
-
 n = int(input())
-g = graph(n)
-for i in range(1,n+1):
-    text = input().split(" ")
-    for j in range(1,int(text[0])+1):
-        g.addEdge(i, int(text[j]))
 
-g.dijkstra(1)
+pages = {}
+for i in range(n):
+    pages[i] = []
+    page = input().split(" ")
+    for j in page[1:]:
+        pages[i].append(int(j)-1)
 
-if inf in g.dist.values():
+dist = [10001 for i in range(n)]
+dist[0] = 1
+visited = [False for i in range(n)]
+
+q = [0]
+while len(q)>0:
+    cur = q.pop(0)
+    if visited[cur]:
+        continue
+    visited[cur] = True
+
+    for adjPage in pages[cur]:
+        if dist[cur]+1 < dist[adjPage]:
+            dist[adjPage] = dist[cur]+1
+            q.append(adjPage)
+
+if False in visited:
     print("N")
 else:
     print("Y")
-print(g.shortest)
+
+endPages = []
+for page in pages:
+    if len(pages[page]) == 0:
+        endPages.append(dist[page])
+
+print(min(endPages))
